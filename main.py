@@ -1,12 +1,13 @@
-list2: List[number] = []
-list3: List[number] = []
+pi = 0
+angle = 0
+lumi: List[number] = []
 
 def on_forever():
-    global list2, list3
-    list2 = [2, 3, 4, 4, 4, 3, 2, 1, 0, 0, 0, 1]
-    list3 = [0, 0, 1, 2, 3, 4, 4, 4, 3, 2, 1, 0]
-    for index in range(12):
-        led.plot(list2[index], list3[index])
-        basic.pause(83.333)
-        led.toggle(list2[index], list3[index])
+    global pi, angle, lumi
+    pi = 3.14159
+    angle = pi / 180
+    for index in range(18):
+        led.plot_brightness(2, 2, 255 * Math.sin(index * 10 * angle))
+        basic.pause(46)
+        lumi = [0, 79, 150, 206, 243, 255, 243, 206, 150, 79]
 basic.forever(on_forever)

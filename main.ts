@@ -36,8 +36,12 @@ input.onButtonPressed(Button.B, function () {
     } else {
         min_hand = 0
     }
-    led.plotBrightness(list2[min_hand], list3[min_hand], 85)
     led.plotBrightness(octo_x[min_hand], octo_y[min_hand], 128)
+    if (hour_hand == min_hand) {
+        led.plotBrightness(list2[hour_hand], list3[hour_hand], 255)
+    } else {
+        led.plotBrightness(list2[min_hand], list3[min_hand], 85)
+    }
 })
 let five_count = 0
 let min_hand = 0

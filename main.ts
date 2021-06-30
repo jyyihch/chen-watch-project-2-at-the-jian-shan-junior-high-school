@@ -60,10 +60,10 @@ basic.forever(function () {
     led.plotBrightness(octo_x[min_hand], octo_y[min_hand], 128)
     led.plotBrightness(list2[min_hand], list3[min_hand], 85)
     led.plotBrightness(list2[hour_hand], list3[hour_hand], 255)
-    for (let index = 0; index < 1; index++) {
+    for (let index = 0; index < 12; index++) {
         for (let index2 = 0; index2 <= 49; index2++) {
             led.plotBrightness(five_x[five_count], five_y[five_count], 255 * Math.sin((index2 + 1) * angle))
-            basic.pause(1)
+            basic.pause(100)
         }
     }
     if (five_count < 4) {
